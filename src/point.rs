@@ -162,6 +162,21 @@ macro_rules! impl_grid_point {
             }
         }
     };
+    ($type:ty, ) => {
+        impl GridPoint for ($type, $type) {
+            fn x(&self) -> i32 {
+                self.0 as i32
+            }
+
+            fn y(&self) -> i32 {
+                self.1 as i32
+            }
+
+            fn get_pivot(self) -> Option<Pivot> {
+                None
+            }
+        }
+    };
 }
 
 impl_grid_point!(IVec2);
@@ -169,6 +184,9 @@ impl_grid_point!(UVec2);
 impl_grid_point!([u32; 2]);
 impl_grid_point!([i32; 2]);
 impl_grid_point!([usize; 2]);
+impl_grid_point!(u32,);
+impl_grid_point!(i32,);
+impl_grid_point!(usize,);
 
 /// A trait for types representing a 2d size.
 #[allow(clippy::len_without_is_empty)]
@@ -218,6 +236,17 @@ macro_rules! impl_size2d {
             }
         }
     };
+    ($type:ty,) => {
+        impl Size2d for ($type, $type) {
+            fn width(&self) -> usize {
+                self.0 as usize
+            }
+
+            fn height(&self) -> usize {
+                self.1 as usize
+            }
+        }
+    };
 }
 
 impl_size2d!(IVec2);
@@ -225,6 +254,10 @@ impl_size2d!(UVec2);
 impl_size2d!([u32; 2]);
 impl_size2d!([i32; 2]);
 impl_size2d!([usize; 2]);
+impl_size2d!(u32,);
+impl_size2d!(i32,);
+impl_size2d!(usize,);
+
 
 /// A trait for types representing an arbitrary 2d point.
 pub trait Point2d {
@@ -261,6 +294,17 @@ macro_rules! impl_point2d {
             }
         }
     };
+    ($type:ty, ) => {
+        impl Point2d for ($type, $type) {
+            fn x(&self) -> f32 {
+                self.0 as f32
+            }
+
+            fn y(&self) -> f32 {
+                self.1 as f32
+            }
+        }
+    };
 }
 
 impl_point2d!(Vec2);
@@ -270,6 +314,10 @@ impl_point2d!([u32; 2]);
 impl_point2d!([i32; 2]);
 impl_point2d!([f32; 2]);
 impl_point2d!([usize; 2]);
+impl_point2d!(u32,);
+impl_point2d!(i32,);
+impl_point2d!(f32,);
+impl_point2d!(usize,);
 
 #[cfg(test)]
 mod tests {
