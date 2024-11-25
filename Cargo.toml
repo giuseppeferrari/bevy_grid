@@ -1,14 +1,14 @@
 [package]
-name = "sark_grids"
+name = "bevy_grid"
 version = "0.5.9"
 edition = "2021"
-authors = ["sark"]
-homepage = "https://github.com/sarkahn/sark_grids_rs"
-repository = "https://github.com/sarkahn/sark_grids_rs"
+authors = ["Giuseppe Ferrari <giuseppeferrari73@gmail.com>"]
+homepage = "https://github.com/giuseppeferrari/bevy_grids"
+repository = "https://github.com/giuseppeferrari/bevy_grids"
 license = "MIT"
 readme = "README.md"
 keywords = ["2d", "grid", "sparse_grid"]
-description = "A set of grids for storing and accessing data in a grid-like way."
+description = "A set of grids for storing and accessing data in a grid-like way. Forked by sark_grid_rs (https://github.com/sarkahn/sark_grids_rs)"
 
 [dependencies]
 bevy_math = "0.14.2"
