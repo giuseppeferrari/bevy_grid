@@ -26,7 +26,7 @@
 
 use std::ops::{Bound, Index, IndexMut, RangeBounds, Sub};
 
-use glam::{IVec2, UVec2, Vec2};
+use bevy_math::{IVec2, UVec2, Vec2};
 use itertools::Itertools;
 
 use crate::{geometry::GridRect, point::Size2d, GridPoint, Pivot};

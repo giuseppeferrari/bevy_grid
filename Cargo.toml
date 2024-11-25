@@ -11,5 +11,5 @@ keywords = ["2d", "grid", "sparse_grid"]
 description = "A set of grids for storing and accessing data in a grid-like way."
 
 [dependencies]
-glam = "0.25"
-itertools = "0.12.1"
+bevy_math = "0.14.2"
+itertools = "0.13.0"
